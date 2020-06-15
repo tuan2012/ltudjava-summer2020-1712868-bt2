@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 15, 2020, 2:25:08 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Taikhoan" table="taikhoan" catalog="data" optimistic-lock="version">
+        <id name="tenTaiKhoan" type="string">
+            <column name="TenTaiKhoan" length="20" />
+            
+        </id>
+        <one-to-one name="sinhvien" class="pojo.Sinhvien" constrained="true"></one-to-one>
+        <property name="matKhau" type="string">
+            <column name="MatKhau" length="50" />
+        </property>
+        <property name="isAdmin" type="java.lang.Boolean">
+            <column name="isAdmin" />
+        </property>
+    </class>
+</hibernate-mapping>
