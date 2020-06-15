@@ -12,13 +12,13 @@
                 <column name="MaMon" length="20" />
             </key-property>
         </composite-id>
-        <many-to-one name="lop" class="pojo.Lop" update="false" insert="false" fetch="select">
+        <many-to-one name="lop" class="pojo.Lop" update="false" insert="false" fetch="join" cascade="all">
             <column name="MaLop" length="20" not-null="true" />
         </many-to-one>
-        <many-to-one name="monhoc" class="pojo.Monhoc" update="false" insert="false" fetch="select">
+        <many-to-one name="monhoc" class="pojo.Monhoc" update="false" insert="false" fetch="join" cascade="all">
             <column name="MaMon" length="20" not-null="true" />
         </many-to-one>
-        <many-to-one name="phong" class="pojo.Phong" fetch="select">
+        <many-to-one name="phong" class="pojo.Phong" fetch="join" cascade="all">
             <column name="MaPhong" length="20" />
         </many-to-one>
         <set name="sinhviens" table="dangky" inverse="true" lazy="true" fetch="select">

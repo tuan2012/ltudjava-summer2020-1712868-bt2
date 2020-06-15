@@ -14,6 +14,7 @@ com\mycompany\hibernate_1712868\view\ThemSinhVien$5.class
 pojo\Sinhvien.class
 com\mycompany\hibernate_1712868\taiKhoanDAO.class
 pojo\DiemId.class
+com\mycompany\hibernate_1712868\lopMonHocDAO.class
 com\mycompany\hibernate_1712868\view\ThemSinhVien$3.class
 com\mycompany\hibernate_1712868\FileChose\FileChooseer.class
 pojo\LopmonhocId.class
@@ -21,5 +22,6 @@ com\mycompany\hibernate_1712868\view\ThemSinhVien$1.class
 pojo\Phong.class
 com\mycompany\hibernate_1712868\view\dashBoardAdmin.class
 com\mycompany\hibernate_1712868\view\ThemSinhVien.class
+com\mycompany\hibernate_1712868\view\ThemSinhVien$6.class
 com\mycompany\hibernate_1712868\view\dashBoardAdmin$1.class
 com\mycompany\hibernate_1712868\HibernateUtils.class

@@ -20,6 +20,13 @@ public class Lopmonhoc  implements java.io.Serializable {
     public Lopmonhoc() {
     }
 
+    public Lopmonhoc(LopmonhocId id, Lop lop, Monhoc monhoc, Phong phong) {
+        this.id = id;
+        this.lop = lop;
+        this.monhoc = monhoc;
+        this.phong = phong;
+    }
+
 	
     public Lopmonhoc(LopmonhocId id, Lop lop, Monhoc monhoc) {
         this.id = id;

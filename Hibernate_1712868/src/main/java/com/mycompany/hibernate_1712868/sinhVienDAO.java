@@ -16,21 +16,35 @@ import pojo.Sinhvien;
  * @author phama
  */
 public class sinhVienDAO {
-    public static void themSinhVien(Sinhvien sv){
+    public static Sinhvien layThongTinSV(String MSSV)
+    {
         Session session=HibernateUtils.getSession();
+        Sinhvien sv=(Sinhvien) session.get(Sinhvien.class, MSSV);
+        return sv;
+        
+    }
+    public static boolean themSinhVien(Sinhvien sv){
+        Session session=HibernateUtils.getSession();
+        if(sinhVienDAO.layThongTinSV(sv.getMssv())!=null)
+            return false;
         Transaction tx=session.beginTransaction();
         session.save(sv);
         tx.commit();
         session.close();
+        return true;
     }
-    public static void themListSinhVien(List<Sinhvien> lists){
-        /*Session session=HibernateUtils.getSession();
-        Transaction tx=session.beginTransaction();*/
-        for(Sinhvien sv:lists)
-        {
-            themSinhVien(sv);
+    public static boolean themListSinhVien(List<Sinhvien> lists){
+        try{
+            for(Sinhvien sv:lists)
+            {
+                themSinhVien(sv);
+
+                //session.clear();
+            }
+        }catch(Exception e){
+            return false;
         }
-        /*tx.commit();
-        session.close();*/
+ 
+     return true;
     }
 }

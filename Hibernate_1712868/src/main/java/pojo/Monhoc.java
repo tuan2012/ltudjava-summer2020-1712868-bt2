@@ -19,6 +19,11 @@ public class Monhoc  implements java.io.Serializable {
     public Monhoc() {
     }
 
+    public Monhoc(String maMon, String tenMon) {
+        this.maMon = maMon;
+        this.tenMon = tenMon;
+    }
+
 	
     public Monhoc(String maMon) {
         this.maMon = maMon;

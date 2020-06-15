@@ -18,6 +18,11 @@ public class Phong  implements java.io.Serializable {
     public Phong() {
     }
 
+    public Phong(String maPhong, String tenPhong) {
+        this.maPhong = maPhong;
+        this.tenPhong = tenPhong;
+    }
+
 	
     public Phong(String maPhong) {
         this.maPhong = maPhong;

@@ -6,11 +6,13 @@
 package com.mycompany.hibernate_1712868.view;
 
 import com.mycompany.hibernate_1712868.FileChose.FileChooseer;
+import com.mycompany.hibernate_1712868.lopMonHocDAO;
 import com.mycompany.hibernate_1712868.sinhVienDAO;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import pojo.Lop;
+import pojo.Lopmonhoc;
 import pojo.Sinhvien;
 import pojo.Taikhoan;
 
@@ -52,6 +54,7 @@ public class ThemSinhVien extends javax.swing.JFrame {
         txtCMND = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtLop = new javax.swing.JTextField();
+        btnAddSchedule = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +113,13 @@ public class ThemSinhVien extends javax.swing.JFrame {
 
         jLabel6.setText("Lop");
 
+        btnAddSchedule.setText("Add Schedule");
+        btnAddSchedule.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddScheduleActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -118,6 +128,8 @@ public class ThemSinhVien extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAddSchedule)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bt1Import)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAdd)
@@ -130,10 +142,10 @@ public class ThemSinhVien extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtName)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtGioiTinh)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
+                    .addComponent(txtGioiTinh, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtCMND)
@@ -149,12 +161,11 @@ public class ThemSinhVien extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,7 +178,8 @@ public class ThemSinhVien extends javax.swing.JFrame {
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt1Import, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -183,21 +195,32 @@ public class ThemSinhVien extends javax.swing.JFrame {
         String gioiTinh=txtGioiTinh.getText();
         String cmnd=txtCMND.getText();
         String lop=txtLop.getText();
-        if(mssv==null){
+        if(mssv.isEmpty()){
             JOptionPane.showMessageDialog(this, "Sinh Viên không có MSSV");
             return;
         }
         Sinhvien sv=new Sinhvien(mssv,new Lop(lop,lop),name,cmnd,gioiTinh,new Taikhoan(mssv,mssv,false));
-        sinhVienDAO.themSinhVien(sv);
+        boolean flag=sinhVienDAO.themSinhVien(sv);
+        if(flag==true)
+        {
+            JOptionPane.showMessageDialog(this, "Thêm sinh viên thành công");
+        }
+        else
+            JOptionPane.showMessageDialog(this, "sinh viên đã tồn tại");
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void bt1ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ImportActionPerformed
-        // TODO add your handling code here:
-        List<Sinhvien> list=FileChooseer.Readfile();
-        JOptionPane.showMessageDialog(this, list.size());
-        /*for(Sinhvien sv:list)
-              System.out.println( sv.toString());*/
-        sinhVienDAO.themListSinhVien(list);
+
+        List<Sinhvien> list=(List<Sinhvien>)FileChooseer.Readfile(true);
+        if(list.size()>0){
+            boolean flag=sinhVienDAO.themListSinhVien(list);
+            if(flag==true)
+                JOptionPane.showMessageDialog(this, "Import File thành công");
+            else
+                JOptionPane.showMessageDialog(this, "Không import được file");
+        }
+        else
+           JOptionPane.showMessageDialog(this, "File trống hoặc không chọn file"); 
     }//GEN-LAST:event_bt1ImportActionPerformed
 
     private void txtMSSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMSSVActionPerformed
@@ -209,6 +232,18 @@ public class ThemSinhVien extends javax.swing.JFrame {
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
+
+    private void btnAddScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddScheduleActionPerformed
+        List<Lopmonhoc> list=(List<Lopmonhoc>)FileChooseer.Readfile(false);
+        if(list.size()>0){
+            boolean flag=lopMonHocDAO.themListLopMH(list);
+            if(flag==true)
+                JOptionPane.showMessageDialog(this, "Import File thành công");
+            else
+                JOptionPane.showMessageDialog(this, "Không import được file");
+        }else
+           JOptionPane.showMessageDialog(this, "File trống hoặc không chọn file"); 
+    }//GEN-LAST:event_btnAddScheduleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,6 +271,7 @@ public class ThemSinhVien extends javax.swing.JFrame {
     private javax.swing.JTable TableListSV;
     private javax.swing.JButton bt1Import;
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnAddSchedule;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
