@@ -1,3 +1,4 @@
+com\mycompany\hibernate_1712868\view\ThemSinhVien$4.class
 pojo\Taikhoan.class
 com\mycompany\hibernate_1712868\Main.class
 com\mycompany\hibernate_1712868\view\ThemSinhVien$2.class
@@ -9,6 +10,7 @@ com\mycompany\hibernate_1712868\view\dashBoardAdmin$2.class
 pojo\Diem.class
 pojo\Lop.class
 pojo\Monhoc.class
+com\mycompany\hibernate_1712868\view\ThemSinhVien$5.class
 pojo\Sinhvien.class
 com\mycompany\hibernate_1712868\taiKhoanDAO.class
 pojo\DiemId.class
