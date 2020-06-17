@@ -33,15 +33,15 @@ public class Main {
         sinhVienDAO.themSinhVien(sv);*/
         //Login.CreateGUI();
         //dashBoardAdmin.CreateGUI();
-        //ThemSinhVien.CreateGUI();
+        ThemSinhVien.CreateGUI();
         /*Dangky dk=new Dangky(new DangkyId("1742005","18HCB","CTT001"));
-        dangKyDAO.ThemdK(dk);*/
-        Iterator<Dangky>dk=lopMonHocDAO.GetDangKy("18HCB","CTT001").iterator();
-        while(dk.hasNext())
-        {
-            Dangky d=dk.next();
-            System.out.print( d.getSinhvien().getMssv()+"\n");
-        }
+            dangKyDAO.ThemdK(dk);*/
+//        Iterator<Dangky>dk=lopMonHocDAO.GetDangKy("18HCB","CTT001").iterator();
+//        while(dk.hasNext())
+//        {
+//            Dangky d=dk.next();
+//            System.out.print( d.getSinhvien().getMssv()+"\n");
+//        }
         
         
        /* Iterator<Sinhvien> set= lopMonHocDAO.GetLop("17HCB","CTT011").iterator();
@@ -50,10 +50,10 @@ public class Main {
             Sinhvien sv=set.next();
             System.err.println(sv.getMssv()+"\n");
         }*/
-        //Lop lop=lopDAO.getThongTinLop("18HCB");
-        /*Lopmonhoc lmh=lopMonHocDAO.getLMH("18HCB","CTT001");
+        /*Lop lop=lopDAO.getThongTinLop("17HCB");
+        //Lopmonhoc lmh=lopMonHocDAO.getLMH("18HCB","CTT001");
         
-        Iterator<Sinhvien>set=lmh.getSinhviens().iterator();//lopMonHocDAO.GetLop("17HCB","CTT001").iterator();
+        Iterator<Sinhvien>set=lop.getSinhviens().iterator();//lopMonHocDAO.GetLop("17HCB","CTT001").iterator();
         while(set.hasNext())
         {
             Sinhvien sv=set.next();

@@ -7,7 +7,7 @@
       <column length="20" name="MSSV"/>
       <generator class="assigned"/>
     </id>
-    <many-to-one class="pojo.Lop" lazy="false" fetch="select" cascade="all" name="lop">
+    <many-to-one class="pojo.Lop" fetch="join" cascade="all" name="lop">
       <column length="20" name="MaLop"/>
     </many-to-one>
     <property name="hoTen" type="string">

@@ -20,7 +20,7 @@
     <many-to-one class="pojo.Phong" fetch="select" name="phong" cascade="all">
       <column length="20" name="MaPhong"/>
     </many-to-one>
-    <set fetch="join" inverse="true" lazy="false" name="dangkies" table="dangky" cascade="all">
+    <set fetch="join" inverse="true"  name="dangkies" table="dangky" cascade="all">
       <key>
         <column length="20" name="MaLop" not-null="true"/>
         <column length="20" name="MaMon" not-null="true"/>

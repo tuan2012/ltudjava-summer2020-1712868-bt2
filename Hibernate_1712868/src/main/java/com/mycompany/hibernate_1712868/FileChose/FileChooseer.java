@@ -8,6 +8,7 @@ package com.mycompany.hibernate_1712868.FileChose;
 
 import com.mycompany.hibernate_1712868.lopDAO;
 import com.mycompany.hibernate_1712868.lopMonHocDAO;
+import com.mycompany.hibernate_1712868.sinhVienDAO;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -97,9 +98,7 @@ public class FileChooseer {
                 lopMonHocDAO.themLopMonHoc(lMH);
                
                 listLMH.add(lMH);
-                
-                
-                
+
             }
             
            //opMonHocDAO.themListLopMH(listLMH);
@@ -120,20 +119,22 @@ public class FileChooseer {
         String fileName = file.getName();
         return fileName.substring(0, fileName.lastIndexOf("."));
     }
-    public static boolean importLop(){
+    public static List<Sinhvien> importSinhVien(){
         JFileChooser jFileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         int r = jFileChooser.showOpenDialog(null);
+         //Set<Sinhvien> sinhViens = new HashSet<>();
+         List<Sinhvien> sinhViens=new ArrayList<>();
         if (r == JFileChooser.APPROVE_OPTION) 
         { 
             File file = jFileChooser.getSelectedFile();
             // set the label to the path of the selected file 
-            Lop lop = new Lop(getFileNameIgnoreExtension(file), getFileNameIgnoreExtension(file));
+            //Lop lop = new Lop(getFileNameIgnoreExtension(file), getFileNameIgnoreExtension(file));
 
             try {
                 Scanner sc = new Scanner(new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF8")));
 
                 sc.nextLine();
-                Set<Sinhvien> sinhViens = new HashSet<>();
+               
                 while(sc.hasNext()){
                     String str = sc.nextLine();
                     String arr[] = str.split(",");
@@ -143,21 +144,23 @@ public class FileChooseer {
                     sv.setGioiTinh(arr[3]);
                     sv.setCmnd(arr[4]);
                     sv.setTaikhoan(new Taikhoan(arr[1], arr[1], false));
+                    sv.setLop(new Lop(getFileNameIgnoreExtension(file),getFileNameIgnoreExtension(file)));
                     sinhViens.add(sv);
                 }
-                lop.setSinhviens(sinhViens);
+               // lop.setSinhviens(sinhViens);
 //                System.out.println(sinhViens);
-                lopDAO.luuLop(lop);
+                //lopDAO.luuLop(lop);
+                sinhVienDAO.themListSinhVien(sinhViens);
 
             } catch (Exception ex) {
                 ex.printStackTrace();
-                return false;
+                return null;
             }
-            return true;
+            return sinhViens;
         } 
         // if the user cancelled the operation 
         else{
-            return false;
+            return null;
         }
     }
     

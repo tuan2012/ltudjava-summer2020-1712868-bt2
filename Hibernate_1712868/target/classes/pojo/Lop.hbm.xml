@@ -16,7 +16,7 @@
       </key>
       <one-to-many class="pojo.Lopmonhoc"/>
     </set>
-    <set cascade="all" name="sinhviens" table="sinhvien" fetch="join">
+    <set cascade="all" name="sinhviens" lazy="false" inverse="true" fetch="select" table="sinhvien">
       <key>
         <column length="20" name="MaLop"/>
       </key>

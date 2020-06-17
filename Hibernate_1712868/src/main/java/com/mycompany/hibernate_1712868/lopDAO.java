@@ -19,6 +19,7 @@ import pojo.Sinhvien;
 public class lopDAO {
     public static Lop getThongTinLop(String MaLop)
     {
+        
         Session session=HibernateUtils.getSession();
         Lop lop;
         lop= (Lop) session.get(Lop.class, MaLop);
@@ -39,12 +40,18 @@ public class lopDAO {
         return LMH;
     }
 
-    public static void luuLop(Lop lop) {
-        Session session=HibernateUtils.getSession();
-        Transaction tx = session.beginTransaction();
-        session.save(lop);
-        tx.commit();
-        session.close();
+    public static boolean luuLop(Lop lop) {
+        try{
+            Session session=HibernateUtils.getSession();
+            Transaction tx = session.beginTransaction();
+            session.save(lop);
+            tx.commit();
+            session.close();
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+        return true;
     }
-    
 }
