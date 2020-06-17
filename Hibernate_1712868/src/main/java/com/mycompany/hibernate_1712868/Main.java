@@ -32,10 +32,10 @@ public class Main {
         sv.setTaikhoan(new Taikhoan("1712868","13",false));
         sinhVienDAO.themSinhVien(sv);*/
         //Login.CreateGUI();
-        //dashBoardAdmin.CreateGUI();
-        ThemSinhVien.CreateGUI();
+        dashBoardAdmin.CreateGUI();
+        //ThemSinhVien.CreateGUI();
         /*Dangky dk=new Dangky(new DangkyId("1742005","18HCB","CTT001"));
-            dangKyDAO.ThemdK(dk);*/
+        dangKyDAO.ThemdK(dk);*/
 //        Iterator<Dangky>dk=lopMonHocDAO.GetDangKy("18HCB","CTT001").iterator();
 //        while(dk.hasNext())
 //        {

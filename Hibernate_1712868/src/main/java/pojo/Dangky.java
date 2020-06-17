@@ -1,6 +1,9 @@
 package pojo;
 // Generated Jun 16, 2020, 9:35:49 PM by Hibernate Tools 4.3.1
 
+import java.util.Vector;
+
+
 
 
 /**
@@ -95,7 +98,15 @@ public class Dangky  implements java.io.Serializable {
         return "Dangky{" + "id=" + id + ", lopmonhoc=" + lopmonhoc + ", sinhvien=" + sinhvien + ", diemGk=" + diemGk + ", diemCk=" + diemCk + ", diemKhac=" + diemKhac + ", diemTong=" + diemTong + '}';
     }
 
-
+ public Vector XuatVector()
+    {
+        Vector vt=new Vector();
+        vt.add(this.getId().getMssv());
+        vt.add(this.getId().getMaMon());
+        vt.add(this.getId().getMaLop());
+        
+        return vt;
+    }
 
 
 }

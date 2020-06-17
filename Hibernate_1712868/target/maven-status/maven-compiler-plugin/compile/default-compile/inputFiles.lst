@@ -2,6 +2,7 @@ D:\bottrap\Hibernate_1712868\src\main\java\pojo\Dangky.java
 D:\bottrap\Hibernate_1712868\src\main\java\com\mycompany\hibernate_1712868\dangKyDAO.java
 D:\bottrap\Hibernate_1712868\src\main\java\com\mycompany\hibernate_1712868\FileChose\FileChooseer.java
 D:\bottrap\Hibernate_1712868\src\main\java\com\mycompany\hibernate_1712868\HibernateUtils.java
+D:\bottrap\Hibernate_1712868\src\main\java\com\mycompany\hibernate_1712868\view\QuanLySVLopMH.java
 D:\bottrap\Hibernate_1712868\src\main\java\pojo\Sinhvien.java
 D:\bottrap\Hibernate_1712868\src\main\java\pojo\Taikhoan.java
 D:\bottrap\Hibernate_1712868\src\main\java\com\mycompany\hibernate_1712868\lopMonHocDAO.java
@@ -19,3 +20,4 @@ D:\bottrap\Hibernate_1712868\src\main\java\pojo\Lop.java
 D:\bottrap\Hibernate_1712868\src\main\java\pojo\Monhoc.java
 D:\bottrap\Hibernate_1712868\src\main\java\Jtable\bangSinhVien.java
 D:\bottrap\Hibernate_1712868\src\main\java\com\mycompany\hibernate_1712868\view\Login.java
+D:\bottrap\Hibernate_1712868\src\main\java\Jtable\bangDangKy.java

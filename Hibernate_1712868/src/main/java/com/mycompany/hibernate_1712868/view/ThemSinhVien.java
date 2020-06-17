@@ -312,7 +312,7 @@ public class ThemSinhVien extends javax.swing.JFrame {
         TableListSV.setFocusable(true);
         
         bangSinhVien bsv = new bangSinhVien(listSV);
-        bsv.show();
+        //bsv.show();
         bsv.xuatDSSinhVien(dsModel);
             
     }
@@ -325,7 +325,7 @@ public class ThemSinhVien extends javax.swing.JFrame {
         TableListSV.setFocusable(true);
         
         bangSinhVien bsv = new bangSinhVien(listSV);
-        bsv.show();
+        //bsv.show();
         bsv.xuatDSSinhVien(dsModel);
             
     }

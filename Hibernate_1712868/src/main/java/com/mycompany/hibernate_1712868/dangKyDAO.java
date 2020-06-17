@@ -10,27 +10,47 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import pojo.Dangky;
+import pojo.DangkyId;
 
 /**
  *
  * @author phama
  */
 public class dangKyDAO {
-    public static void xoaSinhVienDk(Dangky dk)
+    public static boolean xoaSinhVienDk(Dangky dk)
     {
-        Session session =HibernateUtils.getSession();
-        Transaction tx=session.beginTransaction();
-        session.delete(dk);
-        tx.commit();
-        session.close(); 
+        try{
+            Session session =HibernateUtils.getSession();
+            Transaction tx=session.beginTransaction();
+            session.delete(dk);
+            tx.commit();
+            session.close(); 
+        }catch(Exception e)
+        {
+            return false;
+        }
+        return true;
     }
-    public static void ThemdK(Dangky dk)
+    public static boolean ThemdK(Dangky dk)
     {
+        try{
         Session session=HibernateUtils.getSession();
         Transaction tx=session.beginTransaction();
         session.save(dk);
         tx.commit();
         session.close();
+        }catch(Exception e)
+        {
+            return false;
+        }
+        return true;
+    }
+    public static List<Dangky> getListDK()
+    {
+        Session sesion=HibernateUtils.getSession();
+        String hql="select dk from Dangky dk";
+        Query query =sesion.createQuery(hql);
+        return query.list();
     }
    
 }
