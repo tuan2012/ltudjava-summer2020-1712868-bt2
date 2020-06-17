@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 15, 2020, 2:25:07 PM by Hibernate Tools 4.3.1
+// Generated Jun 16, 2020, 9:35:49 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -15,16 +15,10 @@ public class Lopmonhoc  implements java.io.Serializable {
      private Lop lop;
      private Monhoc monhoc;
      private Phong phong;
-     private Set sinhviens = new HashSet(0);
-
+     private Set dangkies = new HashSet(0);
+     private Set sinhviens = new HashSet();
+     
     public Lopmonhoc() {
-    }
-
-    public Lopmonhoc(LopmonhocId id, Lop lop, Monhoc monhoc, Phong phong) {
-        this.id = id;
-        this.lop = lop;
-        this.monhoc = monhoc;
-        this.phong = phong;
     }
 
 	
@@ -33,12 +27,12 @@ public class Lopmonhoc  implements java.io.Serializable {
         this.lop = lop;
         this.monhoc = monhoc;
     }
-    public Lopmonhoc(LopmonhocId id, Lop lop, Monhoc monhoc, Phong phong, Set sinhviens) {
+    public Lopmonhoc(LopmonhocId id, Lop lop, Monhoc monhoc, Phong phong, Set dangkies) {
        this.id = id;
        this.lop = lop;
        this.monhoc = monhoc;
        this.phong = phong;
-       this.sinhviens = sinhviens;
+       this.dangkies = dangkies;
     }
    
     public LopmonhocId getId() {
@@ -69,12 +63,25 @@ public class Lopmonhoc  implements java.io.Serializable {
     public void setPhong(Phong phong) {
         this.phong = phong;
     }
-    public Set getSinhviens() {
-        return this.sinhviens;
+    public Set getDangkies() {
+        return this.dangkies;
     }
     
+    public void setDangkies(Set dangkies) {
+        this.dangkies = dangkies;
+    }
+
+    public Set getSinhviens() {
+        return sinhviens;
+    }
+
     public void setSinhviens(Set sinhviens) {
         this.sinhviens = sinhviens;
+    }
+
+    @Override
+    public String toString() {
+        return "Lopmonhoc{" + "id=" + id + ", lop=" + lop + ", monhoc=" + monhoc + '}';
     }
 
 

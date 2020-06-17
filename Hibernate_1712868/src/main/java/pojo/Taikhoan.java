@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 15, 2020, 2:25:07 PM by Hibernate Tools 4.3.1
+// Generated Jun 16, 2020, 9:35:49 PM by Hibernate Tools 4.3.1
 
 
 
@@ -17,16 +17,17 @@ public class Taikhoan  implements java.io.Serializable {
     public Taikhoan() {
     }
 
-    public Taikhoan(String tenTaiKhoan, String matKhau, Boolean isAdmin) {
-        this.tenTaiKhoan = tenTaiKhoan;
-        this.matKhau = matKhau;
-        this.isAdmin = isAdmin;
-    }
-
 	
     public Taikhoan(Sinhvien sinhvien) {
         this.sinhvien = sinhvien;
     }
+    
+    public Taikhoan(String tenTaiKhoan, String matKhau, Boolean isAdmin) {
+       this.tenTaiKhoan = tenTaiKhoan;
+       this.matKhau = matKhau;
+       this.isAdmin = isAdmin;
+    }
+    
     public Taikhoan(Sinhvien sinhvien, String matKhau, Boolean isAdmin) {
        this.sinhvien = sinhvien;
        this.matKhau = matKhau;

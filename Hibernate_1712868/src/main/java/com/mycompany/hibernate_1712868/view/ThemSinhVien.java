@@ -211,16 +211,11 @@ public class ThemSinhVien extends javax.swing.JFrame {
 
     private void bt1ImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ImportActionPerformed
 
-        List<Sinhvien> list=(List<Sinhvien>)FileChooseer.Readfile(true);
-        if(list.size()>0){
-            boolean flag=sinhVienDAO.themListSinhVien(list);
-            if(flag==true)
-                JOptionPane.showMessageDialog(this, "Import File thành công");
-            else
-                JOptionPane.showMessageDialog(this, "Không import được file");
-        }
+        boolean flag=FileChooseer.importLop();
+        if(flag==true)
+            JOptionPane.showMessageDialog(this, "Import File thành công");
         else
-           JOptionPane.showMessageDialog(this, "File trống hoặc không chọn file"); 
+            JOptionPane.showMessageDialog(this, "Không import được file");
     }//GEN-LAST:event_bt1ImportActionPerformed
 
     private void txtMSSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMSSVActionPerformed
@@ -234,15 +229,11 @@ public class ThemSinhVien extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void btnAddScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddScheduleActionPerformed
-        List<Lopmonhoc> list=(List<Lopmonhoc>)FileChooseer.Readfile(false);
-        if(list.size()>0){
-            boolean flag=lopMonHocDAO.themListLopMH(list);
-            if(flag==true)
-                JOptionPane.showMessageDialog(this, "Import File thành công");
-            else
-                JOptionPane.showMessageDialog(this, "Không import được file");
-        }else
-           JOptionPane.showMessageDialog(this, "File trống hoặc không chọn file"); 
+        boolean flag=FileChooseer.ReadFileCSVTKB();
+        if(flag==true)
+            JOptionPane.showMessageDialog(this, "Import File thành công");
+        else
+            JOptionPane.showMessageDialog(this, "Không import được file");
     }//GEN-LAST:event_btnAddScheduleActionPerformed
 
     /**

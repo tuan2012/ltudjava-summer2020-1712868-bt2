@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 16, 2020, 9:35:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="data" name="pojo.Dangky" optimistic-lock="version" table="dangky">
+    <composite-id class="pojo.DangkyId" name="id">
+      <key-property name="mssv" type="string">
+        <column length="20" name="MSSV"/>
+      </key-property>
+      <key-property name="maLop" type="string">
+        <column length="20" name="MaLop"/>
+      </key-property>
+      <key-property name="maMon" type="string">
+        <column length="20" name="MaMon"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="pojo.Lopmonhoc" fetch="join" cascade="all" name="lopmonhoc" insert="false" update="false">
+      <column length="20" name="MaLop" not-null="true"/>
+      <column length="20" name="MaMon" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="pojo.Sinhvien" fetch="select" insert="false" name="sinhvien" update="false">
+      <column length="20" name="MSSV" not-null="true"/>
+    </many-to-one>
+    <property name="diemGk" type="java.lang.Float">
+      <column name="DiemGK" precision="12" scale="0"/>
+    </property>
+    <property name="diemCk" type="java.lang.Float">
+      <column name="DiemCK" precision="12" scale="0"/>
+    </property>
+    <property name="diemKhac" type="java.lang.Float">
+      <column name="DiemKhac" precision="12" scale="0"/>
+    </property>
+    <property name="diemTong" type="java.lang.Float">
+      <column name="DiemTong" precision="12" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,34 +1,31 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Jun 15, 2020, 2:25:08 PM by Hibernate Tools 4.3.1 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 16, 2020, 9:35:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="pojo.Lopmonhoc" table="lopmonhoc" catalog="data" optimistic-lock="version">
-        <composite-id name="id" class="pojo.LopmonhocId">
-            <key-property name="maLop" type="string">
-                <column name="MaLop" length="20" />
-            </key-property>
-            <key-property name="maMon" type="string">
-                <column name="MaMon" length="20" />
-            </key-property>
-        </composite-id>
-        <many-to-one name="lop" class="pojo.Lop" update="false" insert="false" fetch="join" cascade="all">
-            <column name="MaLop" length="20" not-null="true" />
-        </many-to-one>
-        <many-to-one name="monhoc" class="pojo.Monhoc" update="false" insert="false" fetch="join" cascade="all">
-            <column name="MaMon" length="20" not-null="true" />
-        </many-to-one>
-        <many-to-one name="phong" class="pojo.Phong" fetch="join" cascade="all">
-            <column name="MaPhong" length="20" />
-        </many-to-one>
-        <set name="sinhviens" table="dangky" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="MaLop" length="20" not-null="true" />
-                <column name="MaMon" length="20" not-null="true" />
-            </key>
-            <many-to-many entity-name="pojo.Sinhvien">
-                <column name="MSSV" length="20" not-null="true" />
-            </many-to-many>
-        </set>
-    </class>
+  <class catalog="data" name="pojo.Lopmonhoc" optimistic-lock="version" table="lopmonhoc">
+    <composite-id class="pojo.LopmonhocId" name="id">
+      <key-property name="maLop" type="string">
+        <column length="20" name="MaLop"/>
+      </key-property>
+      <key-property name="maMon" type="string">
+        <column length="20" name="MaMon"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="pojo.Lop" fetch="select" insert="false" name="lop" update="false" cascade="all">
+      <column length="20" name="MaLop" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="pojo.Monhoc" fetch="select" insert="false" name="monhoc" update="false" cascade="all">
+      <column length="20" name="MaMon" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="pojo.Phong" fetch="select" name="phong" cascade="all">
+      <column length="20" name="MaPhong"/>
+    </many-to-one>
+    <set fetch="join" inverse="true" lazy="false" name="dangkies" table="dangky" cascade="all">
+      <key>
+        <column length="20" name="MaLop" not-null="true"/>
+        <column length="20" name="MaMon" not-null="true"/>
+      </key>
+      <one-to-many class="pojo.Dangky"/>
+    </set>
+  </class>
 </hibernate-mapping>

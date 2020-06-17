@@ -46,12 +46,13 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/data?serverTimezone=UTC</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">01672471821nT</property>
-    <mapping resource="pojo/Taikhoan.hbm.xml"/>
-    <mapping resource="pojo/Sinhvien.hbm.xml"/>
+    <property name="hibernate.show_sql">true</property>
     <mapping resource="pojo/Phong.hbm.xml"/>
-    <mapping resource="pojo/Monhoc.hbm.xml"/>
-    <mapping resource="pojo/Diem.hbm.xml"/>
+    <mapping resource="pojo/Taikhoan.hbm.xml"/>
+    <mapping resource="pojo/Dangky.hbm.xml"/>
     <mapping resource="pojo/Lopmonhoc.hbm.xml"/>
+    <mapping resource="pojo/Sinhvien.hbm.xml"/>
     <mapping resource="pojo/Lop.hbm.xml"/>
+    <mapping resource="pojo/Monhoc.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

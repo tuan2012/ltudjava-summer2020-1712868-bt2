@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 15, 2020, 2:25:07 PM by Hibernate Tools 4.3.1
+// Generated Jun 16, 2020, 9:35:49 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -16,34 +16,33 @@ public class Sinhvien  implements java.io.Serializable {
      private String hoTen;
      private String cmnd;
      private String gioiTinh;
-     private Set lopmonhocs = new HashSet(0);
-     private Set diems = new HashSet(0);
+     private Set dangkies = new HashSet(0);
      private Taikhoan taikhoan;
+     private Set lopmonhocs = new HashSet(0);
 
     public Sinhvien() {
-    }
-
-    public Sinhvien(String mssv, Lop lop, String hoTen, String cmnd, String gioiTinh, Taikhoan taikhoan) {
-        this.mssv = mssv;
-        this.lop = lop;
-        this.hoTen = hoTen;
-        this.cmnd = cmnd;
-        this.gioiTinh = gioiTinh;
-        this.taikhoan = taikhoan;
     }
 
 	
     public Sinhvien(String mssv) {
         this.mssv = mssv;
     }
-    public Sinhvien(String mssv, Lop lop, String hoTen, String cmnd, String gioiTinh, Set lopmonhocs, Set diems, Taikhoan taikhoan) {
+    public Sinhvien(String mssv, Lop lop, String hoTen, String cmnd, String gioiTinh, Taikhoan taikhoan) {
        this.mssv = mssv;
        this.lop = lop;
        this.hoTen = hoTen;
        this.cmnd = cmnd;
        this.gioiTinh = gioiTinh;
-       this.lopmonhocs = lopmonhocs;
-       this.diems = diems;
+       this.taikhoan = taikhoan;
+    }
+    
+    public Sinhvien(String mssv, Lop lop, String hoTen, String cmnd, String gioiTinh, Set dangkies, Taikhoan taikhoan) {
+       this.mssv = mssv;
+       this.lop = lop;
+       this.hoTen = hoTen;
+       this.cmnd = cmnd;
+       this.gioiTinh = gioiTinh;
+       this.dangkies = dangkies;
        this.taikhoan = taikhoan;
     }
    
@@ -82,19 +81,12 @@ public class Sinhvien  implements java.io.Serializable {
     public void setGioiTinh(String gioiTinh) {
         this.gioiTinh = gioiTinh;
     }
-    public Set getLopmonhocs() {
-        return this.lopmonhocs;
+    public Set getDangkies() {
+        return this.dangkies;
     }
     
-    public void setLopmonhocs(Set lopmonhocs) {
-        this.lopmonhocs = lopmonhocs;
-    }
-    public Set getDiems() {
-        return this.diems;
-    }
-    
-    public void setDiems(Set diems) {
-        this.diems = diems;
+    public void setDangkies(Set dangkies) {
+        this.dangkies = dangkies;
     }
     public Taikhoan getTaikhoan() {
         return this.taikhoan;
@@ -104,9 +96,17 @@ public class Sinhvien  implements java.io.Serializable {
         this.taikhoan = taikhoan;
     }
 
+    public Set getLopmonhocs() {
+        return lopmonhocs;
+    }
+
+    public void setLopmonhocs(Set lopmonhocs) {
+        this.lopmonhocs = lopmonhocs;
+    }
+
     @Override
     public String toString() {
-        return "Sinhvien{" + "mssv=" + mssv + ", lop=" + lop + ", hoTen=" + hoTen + ", cmnd=" + cmnd + ", gioiTinh=" + gioiTinh + ", taikhoan=" + taikhoan + '}';
+        return "Sinhvien{" + "mssv=" + mssv + ", lop=" + lop + ", hoTen=" + hoTen + ", cmnd=" + cmnd + ", gioiTinh=" + gioiTinh + '}';
     }
 
 

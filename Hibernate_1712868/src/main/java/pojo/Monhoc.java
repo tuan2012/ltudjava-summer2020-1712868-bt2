@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 15, 2020, 2:25:07 PM by Hibernate Tools 4.3.1
+// Generated Jun 16, 2020, 9:35:49 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,25 +14,23 @@ public class Monhoc  implements java.io.Serializable {
      private String maMon;
      private String tenMon;
      private Set lopmonhocs = new HashSet(0);
-     private Set diems = new HashSet(0);
 
     public Monhoc() {
-    }
-
-    public Monhoc(String maMon, String tenMon) {
-        this.maMon = maMon;
-        this.tenMon = tenMon;
     }
 
 	
     public Monhoc(String maMon) {
         this.maMon = maMon;
     }
-    public Monhoc(String maMon, String tenMon, Set lopmonhocs, Set diems) {
+    public Monhoc(String maMon, String tenMon) {
+       this.maMon = maMon;
+       this.tenMon = tenMon;
+    }
+    
+    public Monhoc(String maMon, String tenMon, Set lopmonhocs) {
        this.maMon = maMon;
        this.tenMon = tenMon;
        this.lopmonhocs = lopmonhocs;
-       this.diems = diems;
     }
    
     public String getMaMon() {
@@ -56,12 +54,10 @@ public class Monhoc  implements java.io.Serializable {
     public void setLopmonhocs(Set lopmonhocs) {
         this.lopmonhocs = lopmonhocs;
     }
-    public Set getDiems() {
-        return this.diems;
-    }
-    
-    public void setDiems(Set diems) {
-        this.diems = diems;
+
+    @Override
+    public String toString() {
+        return "Monhoc{" + "maMon=" + maMon + ", tenMon=" + tenMon + '}';
     }
 
 

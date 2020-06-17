@@ -5,10 +5,10 @@
  */
 package com.mycompany.hibernate_1712868;
 
+import pojo.Taikhoan;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import pojo.*;
 /**
  *
  * @author phama

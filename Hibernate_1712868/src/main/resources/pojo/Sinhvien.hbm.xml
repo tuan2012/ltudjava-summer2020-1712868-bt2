@@ -1,40 +1,31 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Jun 15, 2020, 2:25:08 PM by Hibernate Tools 4.3.1 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 16, 2020, 9:35:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="pojo.Sinhvien" table="sinhvien" catalog="data" optimistic-lock="version">
-        <id name="mssv" type="string">
-            <column name="MSSV" length="20" />
-            <generator class="assigned" />
-        </id>
-        <many-to-one name="lop" class="pojo.Lop" fetch="join" cascade="all">
-            <column name="MaLop" length="20" />
-        </many-to-one>
-        <property name="hoTen" type="string">
-            <column name="HoTen" length="50" />
-        </property>
-        <property name="cmnd" type="string">
-            <column name="CMND" length="20" />
-        </property>
-        <property name="gioiTinh" type="string">
-            <column name="GioiTinh" length="20" />
-        </property>
-        <set name="lopmonhocs" table="dangky" inverse="false" lazy="true" fetch="select">
-            <key>
-                <column name="MSSV" length="20" not-null="true" />
-            </key>
-            <many-to-many entity-name="pojo.Lopmonhoc">
-                <column name="MaLop" length="20" not-null="true" />
-                <column name="MaMon" length="20" not-null="true" />
-            </many-to-many>
-        </set>
-        <set name="diems" table="diem" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="MSSV" length="20" not-null="true" />
-            </key>
-            <one-to-many class="pojo.Diem" />
-        </set>
-        <one-to-one name="taikhoan" foreign-key="MSSV" class="pojo.Taikhoan" fetch="join" cascade="all"></one-to-one>
-    </class>
+  <class catalog="data" name="pojo.Sinhvien" optimistic-lock="version" table="sinhvien">
+    <id name="mssv" type="string">
+      <column length="20" name="MSSV"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="pojo.Lop" lazy="false" fetch="select" cascade="all" name="lop">
+      <column length="20" name="MaLop"/>
+    </many-to-one>
+    <property name="hoTen" type="string">
+      <column length="50" name="HoTen"/>
+    </property>
+    <property name="cmnd" type="string">
+      <column length="20" name="CMND"/>
+    </property>
+    <property name="gioiTinh" type="string">
+      <column length="20" name="GioiTinh"/>
+    </property>
+    <set fetch="join" inverse="true" lazy="false" cascade="all" name="dangkies" table="dangky">
+      <key>
+        <column length="20" name="MSSV" not-null="true"/>
+      </key>
+      <one-to-many class="pojo.Dangky"/>
+    </set>
+    
+    <one-to-one class="pojo.Taikhoan" foreign-key="MSSV" name="taikhoan" cascade="all"/>
+  </class>
 </hibernate-mapping>

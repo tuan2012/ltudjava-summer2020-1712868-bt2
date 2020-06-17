@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 15, 2020, 2:25:07 PM by Hibernate Tools 4.3.1
+// Generated Jun 16, 2020, 9:35:49 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -19,15 +19,16 @@ public class Lop  implements java.io.Serializable {
     public Lop() {
     }
 
-    public Lop(String maLop, String tenLop) {
-        this.maLop = maLop;
-        this.tenLop = tenLop;
-    }
-
 	
     public Lop(String maLop) {
         this.maLop = maLop;
     }
+
+    public Lop(String maLop, String tenLop) {
+        this.maLop = maLop;
+        this.tenLop = tenLop;
+    }
+    
     public Lop(String maLop, String tenLop, Set lopmonhocs, Set sinhviens) {
        this.maLop = maLop;
        this.tenLop = tenLop;
@@ -62,6 +63,11 @@ public class Lop  implements java.io.Serializable {
     
     public void setSinhviens(Set sinhviens) {
         this.sinhviens = sinhviens;
+    }
+
+    @Override
+    public String toString() {
+        return "Lop{" + "maLop=" + maLop + ", tenLop=" + tenLop + '}';
     }
 
 

@@ -1,27 +1,20 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Jun 15, 2020, 2:25:08 PM by Hibernate Tools 4.3.1 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 16, 2020, 9:35:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="pojo.Monhoc" table="monhoc" catalog="data" optimistic-lock="version">
-        <id name="maMon" type="string">
-            <column name="MaMon" length="20" />
-            <generator class="assigned" />
-        </id>
-        <property name="tenMon" type="string">
-            <column name="TenMon" length="50" />
-        </property>
-        <set name="lopmonhocs" table="lopmonhoc" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="MaMon" length="20" not-null="true" />
-            </key>
-            <one-to-many class="pojo.Lopmonhoc" />
-        </set>
-        <set name="diems" table="diem" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="MaMon" length="20" not-null="true" />
-            </key>
-            <one-to-many class="pojo.Diem" />
-        </set>
-    </class>
+  <class catalog="data" name="pojo.Monhoc" optimistic-lock="version" table="monhoc">
+    <id name="maMon" type="string">
+      <column length="20" name="MaMon"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="tenMon" type="string">
+      <column length="50" name="TenMon"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="lopmonhocs" table="lopmonhoc">
+      <key>
+        <column length="20" name="MaMon" not-null="true"/>
+      </key>
+      <one-to-many class="pojo.Lopmonhoc"/>
+    </set>
+  </class>
 </hibernate-mapping>

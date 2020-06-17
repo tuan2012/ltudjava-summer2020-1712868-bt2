@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 15, 2020, 2:25:07 PM by Hibernate Tools 4.3.1
+// Generated Jun 16, 2020, 9:35:49 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -18,15 +18,15 @@ public class Phong  implements java.io.Serializable {
     public Phong() {
     }
 
-    public Phong(String maPhong, String tenPhong) {
-        this.maPhong = maPhong;
-        this.tenPhong = tenPhong;
-    }
-
 	
     public Phong(String maPhong) {
         this.maPhong = maPhong;
     }
+    public Phong(String maPhong, String tenPhong) {
+        this.maPhong = maPhong;
+        this.tenPhong = tenPhong;
+    }
+    
     public Phong(String maPhong, String tenPhong, Set lopmonhocs) {
        this.maPhong = maPhong;
        this.tenPhong = tenPhong;
