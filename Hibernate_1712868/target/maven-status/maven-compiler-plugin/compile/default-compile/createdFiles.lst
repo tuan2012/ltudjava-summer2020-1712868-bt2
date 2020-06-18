@@ -10,7 +10,9 @@ com\mycompany\hibernate_1712868\view\XemDanhSachLop$2.class
 pojo\DangkyId.class
 com\mycompany\hibernate_1712868\view\QuanLySVLopMH.class
 com\mycompany\hibernate_1712868\taiKhoanDAO.class
+com\mycompany\hibernate_1712868\view\dashBoardAdmin$5.class
 com\mycompany\hibernate_1712868\view\QuanLySVLopMH$1.class
+com\mycompany\hibernate_1712868\view\QuanLyTaiKhoan$2.class
 com\mycompany\hibernate_1712868\view\QuanLyDiemSinhVien$2.class
 Jtable\bangSinhVienDanhSach.class
 com\mycompany\hibernate_1712868\FileChose\FileChooseer.class
@@ -22,6 +24,7 @@ com\mycompany\hibernate_1712868\view\ThemSinhVien.class
 com\mycompany\hibernate_1712868\view\QuanLySVLopMH$5.class
 Jtable\bangSinhVien.class
 com\mycompany\hibernate_1712868\view\ThemSinhVien$4.class
+Jtable\bangTaiKhoan.class
 com\mycompany\hibernate_1712868\Main.class
 pojo\Dangky.class
 com\mycompany\hibernate_1712868\view\dashBoardAdmin$3.class
@@ -33,6 +36,7 @@ com\mycompany\hibernate_1712868\view\QuanLySVLopMH$4.class
 pojo\Lop.class
 pojo\Monhoc.class
 pojo\Sinhvien.class
+com\mycompany\hibernate_1712868\view\QuanLyTaiKhoan$1.class
 com\mycompany\hibernate_1712868\view\QuanLyDiemSinhVien$4.class
 com\mycompany\hibernate_1712868\view\XemDanhSachLop.class
 com\mycompany\hibernate_1712868\lopMonHocDAO.class
@@ -43,6 +47,7 @@ com\mycompany\hibernate_1712868\dangKyDAO.class
 pojo\Phong.class
 com\mycompany\hibernate_1712868\lopDAO.class
 com\mycompany\hibernate_1712868\view\QuanLyDiemSinhVien$1.class
+com\mycompany\hibernate_1712868\view\QuanLyTaiKhoan.class
 com\mycompany\hibernate_1712868\view\dashBoardAdmin$1.class
 com\mycompany\hibernate_1712868\view\dashBoardAdmin$4.class
 com\mycompany\hibernate_1712868\HibernateUtils.class

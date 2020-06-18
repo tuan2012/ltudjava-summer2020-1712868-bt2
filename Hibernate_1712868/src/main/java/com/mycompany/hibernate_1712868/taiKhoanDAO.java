@@ -9,6 +9,7 @@ import pojo.Taikhoan;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 /**
  *
  * @author phama
@@ -31,5 +32,21 @@ public class taiKhoanDAO {
 
         session.close();
         return tk;
+    }
+     public static boolean capNhatTK(Taikhoan taiKhoan)
+    {
+        try{
+            Session session= HibernateUtils.getSession();
+            Transaction tx=session.beginTransaction();
+            session.update(taiKhoan);
+            tx.commit();
+
+            session.close();
+        }catch(Exception e)
+        {
+            return false;
+        }
+        return true;
+       
     }
 }

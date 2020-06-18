@@ -31,8 +31,9 @@ public class dashBoardAdmin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnQLDiem = new javax.swing.JButton();
+        btnQLSVLMH = new javax.swing.JButton();
+        btnXemDSSV = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -63,17 +64,24 @@ public class dashBoardAdmin extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Quản Lý Sinh Viên Trong Lớp Môn Hoc");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnQLDiem.setText("Quản Lý Điểm Sinh Viên");
+        btnQLDiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnQLDiemActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Xem Danh Sách Sinh Viên");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnQLSVLMH.setText("Quản Lý Sinh Viên Trong Lớp Môn Hoc");
+        btnQLSVLMH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnQLSVLMHActionPerformed(evt);
+            }
+        });
+
+        btnXemDSSV.setText("Xem Danh Sách Sinh Viên");
+        btnXemDSSV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXemDSSVActionPerformed(evt);
             }
         });
 
@@ -85,8 +93,9 @@ public class dashBoardAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnQLDiem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnQLSVLMH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnXemDSSV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -94,11 +103,13 @@ public class dashBoardAdmin extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnQLSVLMH, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(btnXemDSSV, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnQLDiem, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(266, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -127,14 +138,20 @@ public class dashBoardAdmin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnQLSVLMHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQLSVLMHActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                // TODO add your handling code here:
         QuanLySVLopMH.CreateGUI();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnQLSVLMHActionPerformed
+
+    private void btnXemDSSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXemDSSVActionPerformed
+        // TODO add your handling code here:
+        XemDanhSachLop.CreateGUI();
+    }//GEN-LAST:event_btnXemDSSVActionPerformed
+
+    private void btnQLDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQLDiemActionPerformed
+        // TODO add your handling code here:
+        QuanLyDiemSinhVien.CreateGUI();
+    }//GEN-LAST:event_btnQLDiemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,9 +175,10 @@ public class dashBoardAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnQLDiem;
+    private javax.swing.JButton btnQLSVLMH;
+    private javax.swing.JButton btnXemDSSV;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

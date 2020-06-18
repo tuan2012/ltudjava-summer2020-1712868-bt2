@@ -1,6 +1,9 @@
 package pojo;
 // Generated Jun 16, 2020, 9:35:49 PM by Hibernate Tools 4.3.1
 
+import java.util.Vector;
+
+
 
 
 /**
@@ -63,7 +66,13 @@ public class Taikhoan  implements java.io.Serializable {
         this.isAdmin = isAdmin;
     }
 
-
+    public Vector taoVector()
+    {
+        Vector vt=new Vector();
+        vt.add(this.tenTaiKhoan);
+        vt.add(this.matKhau);
+        return vt;
+    }
 
 
 }
