@@ -305,7 +305,7 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       /* String MaLop=txtMaLopXemBD.getText();
+        String MaLop=txtMaLopXemBD.getText();
         String MaMon=txtMaMonXemBD.getText();
         if(!(MaLop.isEmpty()&MaMon.isEmpty()))
         {
@@ -328,7 +328,7 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Đủ Thông Tin");
         }
-        */
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void showDangKy(Set<Dangky> listDangKy)
