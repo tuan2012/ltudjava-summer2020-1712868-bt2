@@ -107,7 +107,17 @@ public class Dangky  implements java.io.Serializable {
         
         return vt;
     }
-
+public Vector XuatVectorBangDiem()
+    {
+        Vector vt=new Vector();
+        vt.add(this.getId().getMssv());
+       vt.add(this.getSinhvien().getHoTen());
+       vt.add(this.diemGk);
+       vt.add(this.diemCk);
+       vt.add(this.diemKhac);
+       vt.add(this.diemTong);
+        return vt;
+    }
 
 }
 

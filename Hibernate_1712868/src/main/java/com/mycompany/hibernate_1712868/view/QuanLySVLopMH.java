@@ -183,14 +183,20 @@ public class QuanLySVLopMH extends javax.swing.JFrame {
         String MSSV=txtMSSV.getText();
         String MaMon=txtMaMon.getText();
         String MaLop=txtMaLop.getText();
-        boolean flag= dangKyDAO.xoaSinhVienDk(new Dangky(new DangkyId(MSSV, MaLop, MaMon)));
-        if(flag==true)
+         if(!(MSSV.isEmpty()&MaMon.isEmpty()&MaLop.isEmpty()))
         {
-            JOptionPane.showMessageDialog(this, "Xóa Thành Công");
-            showDangKy(dangKyDAO.getListDK());
+            boolean flag= dangKyDAO.xoaSinhVienDk(new Dangky(new DangkyId(MSSV, MaLop, MaMon)));
+            if(flag==true)
+            {
+                JOptionPane.showMessageDialog(this, "Xóa Thành Công");
+                showDangKy(dangKyDAO.getListDK());
+            }
+            else
+                JOptionPane.showMessageDialog(this, "Bạn Nhập Thông Tin Sai");
+        }else
+        {
+            JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Thông Tin");
         }
-        else
-            JOptionPane.showMessageDialog(this, "Bạn Nhập Thông Tin Sai");
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
@@ -198,14 +204,20 @@ public class QuanLySVLopMH extends javax.swing.JFrame {
         String MSSV=txtMSSV.getText();
         String MaMon=txtMaMon.getText();
         String MaLop=txtMaLop.getText();
-        boolean flag= dangKyDAO.ThemdK(new Dangky(new DangkyId(MSSV, MaLop, MaMon)));
-        if(flag==true)
+        if(!(MSSV.isEmpty()&MaMon.isEmpty()&MaLop.isEmpty()))
         {
-            JOptionPane.showMessageDialog(this, "Thêm Thành Công");  
-            showDangKy(dangKyDAO.getListDK());
+            boolean flag= dangKyDAO.ThemdK(new Dangky(new DangkyId(MSSV, MaLop, MaMon)));
+            if(flag==true)
+            {
+                JOptionPane.showMessageDialog(this, "Thêm Thành Công");  
+                showDangKy(dangKyDAO.getListDK());
+            }
+            else
+                JOptionPane.showMessageDialog(this, "Bạn Nhập Thông Tin Sai");
+        }else
+        {
+            JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Thông Tin");
         }
-        else
-            JOptionPane.showMessageDialog(this, "Bạn Nhập Thông Tin Sai");
     }//GEN-LAST:event_btnThemActionPerformed
 
     /**
@@ -222,7 +234,7 @@ public class QuanLySVLopMH extends javax.swing.JFrame {
         
         bangDangKy bdk = new bangDangKy(listDangKy);
         //bsv.show();
-        bdk.xuatDSSinhVien(dsModel);
+        bdk.xuatDSDangKy(dsModel);
             
     }
     public static void CreateGUI() {

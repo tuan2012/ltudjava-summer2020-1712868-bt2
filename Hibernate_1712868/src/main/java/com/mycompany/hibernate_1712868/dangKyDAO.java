@@ -52,5 +52,30 @@ public class dangKyDAO {
         Query query =sesion.createQuery(hql);
         return query.list();
     }
+   public static boolean capNhatDiem(Dangky dk)
+    {
+        try{
+        Session session=HibernateUtils.getSession();
+        Transaction tx=session.beginTransaction();
+        session.update(dk);
+        tx.commit();
+        session.close();
+        }catch(Exception e)
+        {
+            return false;
+        }
+        return true;
+    }
    
+   public static boolean CapNhatListDiem(List<Dangky> listDK)
+    {
+        try{
+            for(Dangky dk:listDK)
+                capNhatDiem(dk);
+        }catch(Exception e)
+        {
+            return false;
+        }
+        return true;
+    }
 }

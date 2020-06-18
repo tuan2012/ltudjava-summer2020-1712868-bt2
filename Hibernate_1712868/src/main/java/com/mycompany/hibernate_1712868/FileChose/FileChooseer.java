@@ -6,6 +6,7 @@
 package com.mycompany.hibernate_1712868.FileChose;
 
 
+import com.mycompany.hibernate_1712868.dangKyDAO;
 import com.mycompany.hibernate_1712868.lopDAO;
 import com.mycompany.hibernate_1712868.lopMonHocDAO;
 import com.mycompany.hibernate_1712868.sinhVienDAO;
@@ -162,6 +163,46 @@ public class FileChooseer {
         else{
             return null;
         }
+    }
+    private static String[] getNamePointFile(File file)
+    {
+        String fileName=file.getName();
+        fileName=fileName.substring(0, fileName.lastIndexOf("."));
+        
+        String []nameArr=fileName.split("-");
+        return nameArr;
+    }
+    public static boolean readCSVPoint() 
+    {
+        File file=Readfile();
+        String[] fileName=getNamePointFile(file);
+        List<Dangky> listDK=new ArrayList<>();
+        try {
+            Scanner sc = new Scanner(new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF8")));
+            sc.nextLine();
+            while(sc.hasNext())
+            {
+                String str=sc.nextLine();
+                System.out.println(str+"\n");
+                String []arrString=str.split(",");
+                Dangky dk=new Dangky();
+                dk.setId(new DangkyId(arrString[1],fileName[0],fileName[1]));
+                dk.setDiemGk(Float.parseFloat(arrString[3]));
+                dk.setDiemCk(Float.parseFloat(arrString[4]));
+                dk.setDiemKhac(Float.parseFloat(arrString[5]));
+                dk.setDiemTong(Float.parseFloat(arrString[6]));
+                listDK.add(dk);
+            }
+            dangKyDAO.CapNhatListDiem(listDK);
+        } catch (FileNotFoundException ex) {            
+            Logger.getLogger(FileChooseer.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(FileChooseer.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+         
     }
     
    /* private static List<Sinhvien> ReadFileCSVSV(File file)  {

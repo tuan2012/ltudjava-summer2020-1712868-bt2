@@ -5,7 +5,10 @@
  */
 package Jtable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import pojo.Sinhvien;
 
@@ -13,22 +16,15 @@ import pojo.Sinhvien;
  *
  * @author phama
  */
-public class bangSinhVien {
+public class bangSinhVienDanhSach {
     private List<Sinhvien> ds = new ArrayList<>();
-    
-    public bangSinhVien(Set<Sinhvien> sinhViens){
-        ds.addAll(sinhViens);
-    }
-    public bangSinhVien(List<Sinhvien> sinhViens){
-        ds.addAll(sinhViens);
-    }
-    public bangSinhVien(Sinhvien sinhViens){
+    public bangSinhVienDanhSach(Sinhvien sinhViens){
         ds.add(sinhViens);
     }
-     public bangSinhVien(Collection<Sinhvien> sinhViens){
+     public bangSinhVienDanhSach(Collection<Sinhvien> sinhViens){
         ds.addAll(sinhViens);
     }
-    public void xuatDSSinhVien(DefaultTableModel dtm)
+     public void xuatDSSinhVien(DefaultTableModel dtm)
     {
         int n=dtm.getRowCount();
         for(int i=n-1;i>=0;i--)
@@ -37,12 +33,8 @@ public class bangSinhVien {
         }
         for(int i=0;i<ds.size();i++)
         {
-            Vector vt=ds.get(i).XuatVector();
+            Vector vt=ds.get(i).XuatVectorDS();
             dtm.addRow(vt);
         }
-    }
-
-    public void show() {
-        System.out.println(ds);
     }
 }

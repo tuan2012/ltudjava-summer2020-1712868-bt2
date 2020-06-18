@@ -120,6 +120,15 @@ public class Sinhvien  implements java.io.Serializable {
         vt.add(lop.getMaLop());
         return vt;
     }
+    public Vector XuatVectorDS()
+    {
+        Vector vt=new Vector();
+        vt.add(this.mssv);
+        vt.add(this.hoTen);
+        vt.add(gioiTinh);
+        vt.add(cmnd);
+        return vt;
+    }
 
 }
 

@@ -6,6 +6,7 @@
 package Jtable;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.Vector;
@@ -29,7 +30,10 @@ public class bangDangKy {
     public bangDangKy(Dangky dangKy){
         ds.add(dangKy);
     }
-    public void xuatDSSinhVien(DefaultTableModel dtm)
+    public bangDangKy(Collection<Dangky> dangKys){
+        ds.addAll(dangKys);
+    }
+    public void xuatDSDangKy(DefaultTableModel dtm)
     {
         int n=dtm.getRowCount();
         for(int i=n-1;i>=0;i--)
@@ -39,6 +43,19 @@ public class bangDangKy {
         for(int i=0;i<ds.size();i++)
         {
             Vector vt=ds.get(i).XuatVector();
+            dtm.addRow(vt);
+        }
+    }
+    public void xuatDSDiem(DefaultTableModel dtm)
+    {
+        int n=dtm.getRowCount();
+        for(int i=n-1;i>=0;i--)
+        {
+            dtm.removeRow(i);
+        }
+        for(int i=0;i<ds.size();i++)
+        {
+            Vector vt=ds.get(i).XuatVectorBangDiem();
             dtm.addRow(vt);
         }
     }

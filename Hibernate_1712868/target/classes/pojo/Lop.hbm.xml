@@ -10,7 +10,7 @@
     <property name="tenLop" type="string">
       <column length="20" name="TenLop"/>
     </property>
-    <set fetch="select" inverse="true" lazy="true" name="lopmonhocs" table="lopmonhoc">
+    <set fetch="select" inverse="true" cascade="all" lazy="false" name="lopmonhocs" table="lopmonhoc">
       <key>
         <column length="20" name="MaLop" not-null="true"/>
       </key>

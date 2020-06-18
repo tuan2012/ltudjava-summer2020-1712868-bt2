@@ -14,7 +14,7 @@
     <many-to-one class="pojo.Lop" fetch="select" insert="false" name="lop" update="false" cascade="all">
       <column length="20" name="MaLop" not-null="true"/>
     </many-to-one>
-    <many-to-one class="pojo.Monhoc" fetch="select" insert="false" name="monhoc" update="false" cascade="all">
+    <many-to-one class="pojo.Monhoc" fetch="select" insert="false" lazy="false" name="monhoc" update="false" cascade="all">
       <column length="20" name="MaMon" not-null="true"/>
     </many-to-one>
     <many-to-one class="pojo.Phong" fetch="select" name="phong" cascade="all">

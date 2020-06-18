@@ -7,6 +7,7 @@ package com.mycompany.hibernate_1712868;
 
 import com.mycompany.hibernate_1712868.view.Login;
 import com.mycompany.hibernate_1712868.view.ThemSinhVien;
+import com.mycompany.hibernate_1712868.view.XemDanhSachLop;
 import com.mycompany.hibernate_1712868.view.dashBoardAdmin;
 import java.util.Iterator;
 import java.util.Set;
@@ -32,7 +33,8 @@ public class Main {
         sv.setTaikhoan(new Taikhoan("1712868","13",false));
         sinhVienDAO.themSinhVien(sv);*/
         //Login.CreateGUI();
-        dashBoardAdmin.CreateGUI();
+        //dashBoardAdmin.CreateGUI();
+        XemDanhSachLop.CreateGUI();
         //ThemSinhVien.CreateGUI();
         /*Dangky dk=new Dangky(new DangkyId("1742005","18HCB","CTT001"));
         dangKyDAO.ThemdK(dk);*/
