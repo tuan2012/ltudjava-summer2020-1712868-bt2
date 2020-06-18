@@ -279,7 +279,7 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
 
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
         // TODO add your handling code here:
-       /* String mssv=txtMSSV.getText();
+        String mssv=txtMSSV.getText();
         String maLop=txtMaLop.getText();
         String maMon=txtMaMon.getText();
         Float diemGK=Float.parseFloat(txtDiemGK.getText());
@@ -300,7 +300,7 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Cập Nhật Thất Bại");
         }
         else
-            JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Đủ Thông Tin");*/
+            JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Đủ Thông Tin");
     }//GEN-LAST:event_btnCapNhatActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
