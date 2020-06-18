@@ -32,8 +32,8 @@ public class Main {
         sv.setLop(new Lop("CCT7"));
         sv.setTaikhoan(new Taikhoan("1712868","13",false));
         sinhVienDAO.themSinhVien(sv);*/
-        //Login.CreateGUI();
-        dashBoardAdmin.CreateGUI();
+        Login.CreateGUI();
+        //dashBoardAdmin.CreateGUI();
         //XemDanhSachLop.CreateGUI();
         //ThemSinhVien.CreateGUI();
         /*Dangky dk=new Dangky(new DangkyId("1742005","18HCB","CTT001"));

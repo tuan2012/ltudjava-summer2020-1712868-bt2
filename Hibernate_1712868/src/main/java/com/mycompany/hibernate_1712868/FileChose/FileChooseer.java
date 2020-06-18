@@ -65,6 +65,8 @@ public class FileChooseer {
     public static boolean ReadFileCSVTKB()
     {
         File file=Readfile();
+        if(file.equals(null))
+            return false;
         List<Lopmonhoc> listLMH=new ArrayList<>();
         Set<Dangky>dangKies=new HashSet<>();
         String fileName=file.getName();
@@ -175,6 +177,8 @@ public class FileChooseer {
     public static boolean readCSVPoint() 
     {
         File file=Readfile();
+        if(file.equals(null))
+            return false;
         String[] fileName=getNamePointFile(file);
         List<Dangky> listDK=new ArrayList<>();
         try {

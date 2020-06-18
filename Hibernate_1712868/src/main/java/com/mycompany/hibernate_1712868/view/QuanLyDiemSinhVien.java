@@ -279,7 +279,7 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
 
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
         // TODO add your handling code here:
-        String mssv=txtMSSV.getText();
+       /* String mssv=txtMSSV.getText();
         String maLop=txtMaLop.getText();
         String maMon=txtMaMon.getText();
         Float diemGK=Float.parseFloat(txtDiemGK.getText());
@@ -300,12 +300,12 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Cập Nhật Thất Bại");
         }
         else
-            JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Đủ Thông Tin");
+            JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Đủ Thông Tin");*/
     }//GEN-LAST:event_btnCapNhatActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String MaLop=txtMaLopXemBD.getText();
+       /* String MaLop=txtMaLopXemBD.getText();
         String MaMon=txtMaMonXemBD.getText();
         if(!(MaLop.isEmpty()&MaMon.isEmpty()))
         {
@@ -328,12 +328,12 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Đủ Thông Tin");
         }
-        
+        */
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void showDangKy(Set<Dangky> listDangKy)
     {
-        String names[] = {"MSSV", "Họ Tên","Điểm GK","Điểm CK","Điểm Khác","Điểm Tổng","Tình Trạng"};
+      /*  String names[] = {"MSSV", "Họ Tên","Điểm GK","Điểm CK","Điểm Khác","Điểm Tổng","Tình Trạng"};
         
         DefaultTableModel dsModel=new DefaultTableModel(null,names);
         TableDiem.setModel(dsModel);
@@ -342,7 +342,7 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
         bangDangKy bdk = new bangDangKy(listDangKy);
         //bsv.show();
         bdk.xuatDSDiem(dsModel);
-            
+            */
     }
     /**
      * @param args the command line arguments

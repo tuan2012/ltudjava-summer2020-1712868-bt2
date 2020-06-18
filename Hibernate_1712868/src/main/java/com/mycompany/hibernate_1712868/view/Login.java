@@ -19,7 +19,7 @@ import pojo.Taikhoan;
  * @author phama
  */
 public class Login extends JFrame implements ActionListener{
-    
+    public static String userName="";
     Container container = getContentPane();
     JLabel userLabel = new JLabel("USERNAME");
     JLabel passwordLabel = new JLabel("PASSWORD");
@@ -76,8 +76,8 @@ public class Login extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         //Coding Part of LOGIN button
         if (e.getSource()== loginButton) {
-            String userText;
             String pwdText;
+            String userText;
             userText = userTextField.getText();
             pwdText = passwordField.getText();
             checkUser(userText,pwdText);
@@ -105,9 +105,13 @@ public class Login extends JFrame implements ActionListener{
         for(Taikhoan tk:taiKhoans)
             if(userText.equals(tk.getTenTaiKhoan())&&pwdText.equals(tk.getMatKhau())) {
                 //JOptionPane.showMessageDialog(this, "ok");
-                dispose();
-                dashBoardAdmin.CreateGUI();
+                userName=userText;
                 flag=true;
+                dispose();
+                if(tk.getIsAdmin())
+                    dashBoardAdmin.CreateGUI();
+                else
+                    DashBoardSinhVien.CreateGUI();
             }
         if(!flag)
             JOptionPane.showMessageDialog(this, "Invalid Username or Password");

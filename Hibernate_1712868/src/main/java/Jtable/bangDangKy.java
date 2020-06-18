@@ -59,4 +59,17 @@ public class bangDangKy {
             dtm.addRow(vt);
         }
     }
+    public void xuatDSDiemSinhVien(DefaultTableModel dtm)
+    {
+        int n=dtm.getRowCount();
+        for(int i=n-1;i>=0;i--)
+        {
+            dtm.removeRow(i);
+        }
+        for(int i=0;i<ds.size();i++)
+        {
+            Vector vt=ds.get(i).XuatVectorBangDiemSinhVien();
+            dtm.addRow(vt);
+        }
+    }
 }

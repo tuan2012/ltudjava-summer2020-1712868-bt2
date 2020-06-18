@@ -46,7 +46,6 @@ public class ThemSinhVien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFileChooser1 = new javax.swing.JFileChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         txtCMND1 = new javax.swing.JTextField();
@@ -300,8 +299,9 @@ public class ThemSinhVien extends javax.swing.JFrame {
          */
        
         //</editor-fold>
+            
         ThemSinhVien tsv=new ThemSinhVien();
-        tsv.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        tsv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -342,7 +342,6 @@ public class ThemSinhVien extends javax.swing.JFrame {
     private javax.swing.JButton bt1Import;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnAddSchedule;
-    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

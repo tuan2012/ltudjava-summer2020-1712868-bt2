@@ -123,6 +123,19 @@ public Vector XuatVectorBangDiem()
        
         return vt;
     }
+public Vector XuatVectorBangDiemSinhVien()
+    {
+    Vector vt=new Vector();
+    vt.add(this.getId().getMaMon());
+    vt.add(this.getLopmonhoc().getMonhoc().getTenMon());
+    vt.add(this.diemGk);
+    vt.add(this.diemCk);
+    vt.add(this.diemKhac);
+    vt.add(this.diemTong);
+       
+       
+        return vt;
+    }
 
 }
 

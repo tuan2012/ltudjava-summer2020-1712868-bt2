@@ -2,8 +2,10 @@ package com.mycompany.hibernate_1712868;
 
 
 import java.util.List;
+import java.util.Set;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pojo.Dangky;
 import pojo.Sinhvien;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -46,5 +48,10 @@ public class sinhVienDAO {
         }
  
      return true;
+    }
+    public static Set<Dangky> laySetDangKy(String MSSV)
+    {
+        Sinhvien sv=layThongTinSV(MSSV);
+        return sv.getDangkies();
     }
 }
