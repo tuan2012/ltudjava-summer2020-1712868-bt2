@@ -116,6 +116,11 @@ public Vector XuatVectorBangDiem()
        vt.add(this.diemCk);
        vt.add(this.diemKhac);
        vt.add(this.diemTong);
+       if(diemTong>=5)
+        vt.add("Đậu");
+       else
+        vt.add("Rớt");
+       
         return vt;
     }
 

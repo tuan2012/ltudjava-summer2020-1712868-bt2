@@ -235,7 +235,8 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(125, 125, 125))
         );
 
         pack();
@@ -294,7 +295,7 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
 
     public void showDangKy(Set<Dangky> listDangKy)
     {
-        String names[] = {"MSSV", "Họ Tên","Điểm GK","Điểm CK","Điểm Khác","Điểm Tổng"};
+        String names[] = {"MSSV", "Họ Tên","Điểm GK","Điểm CK","Điểm Khác","Điểm Tổng","Tình Trạng"};
         
         DefaultTableModel dsModel=new DefaultTableModel(null,names);
         TableDiem.setModel(dsModel);
