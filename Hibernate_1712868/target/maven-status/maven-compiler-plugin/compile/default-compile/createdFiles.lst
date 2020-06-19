@@ -16,6 +16,7 @@ com\mycompany\hibernate_1712868\view\dashBoardAdmin$5.class
 com\mycompany\hibernate_1712868\view\QuanLySVLopMH$1.class
 com\mycompany\hibernate_1712868\view\QuanLyTaiKhoan$2.class
 com\mycompany\hibernate_1712868\view\dashBoardAdmin$6.class
+com\mycompany\hibernate_1712868\HibernateUtil.class
 com\mycompany\hibernate_1712868\view\QuanLyDiemSinhVien$2.class
 Jtable\bangSinhVienDanhSach.class
 com\mycompany\hibernate_1712868\FileChose\FileChooseer.class
@@ -57,4 +58,3 @@ com\mycompany\hibernate_1712868\view\QuanLyDiemSinhVien$1.class
 com\mycompany\hibernate_1712868\view\QuanLyTaiKhoan.class
 com\mycompany\hibernate_1712868\view\dashBoardAdmin$1.class
 com\mycompany\hibernate_1712868\view\dashBoardAdmin$4.class
-com\mycompany\hibernate_1712868\HibernateUtils.class

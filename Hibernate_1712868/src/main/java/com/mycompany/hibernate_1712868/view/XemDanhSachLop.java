@@ -34,6 +34,7 @@ public class XemDanhSachLop extends javax.swing.JFrame {
      */
     public XemDanhSachLop() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**

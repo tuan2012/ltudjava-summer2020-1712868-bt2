@@ -28,6 +28,7 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
      */
     public QuanLyDiemSinhVien() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -333,7 +334,7 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
 
     public void showDangKy(Set<Dangky> listDangKy)
     {
-      /*  String names[] = {"MSSV", "Họ Tên","Điểm GK","Điểm CK","Điểm Khác","Điểm Tổng","Tình Trạng"};
+        String names[] = {"MSSV", "Họ Tên","Điểm GK","Điểm CK","Điểm Khác","Điểm Tổng","Tình Trạng"};
         
         DefaultTableModel dsModel=new DefaultTableModel(null,names);
         TableDiem.setModel(dsModel);
@@ -342,7 +343,7 @@ public class QuanLyDiemSinhVien extends javax.swing.JFrame {
         bangDangKy bdk = new bangDangKy(listDangKy);
         //bsv.show();
         bdk.xuatDSDiem(dsModel);
-            */
+            
     }
     /**
      * @param args the command line arguments

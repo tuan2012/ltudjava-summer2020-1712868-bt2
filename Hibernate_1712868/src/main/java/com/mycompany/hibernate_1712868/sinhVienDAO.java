@@ -20,13 +20,13 @@ import pojo.Sinhvien;
 public class sinhVienDAO {
     public static Sinhvien layThongTinSV(String MSSV)
     {
-        Session session=HibernateUtils.getSession();
+        Session session=HibernateUtil.getSession();
         Sinhvien sv=(Sinhvien) session.get(Sinhvien.class, MSSV);
         return sv;
         
     }
     public static boolean themSinhVien(Sinhvien sv){
-        Session session=HibernateUtils.getSession();
+        Session session=HibernateUtil.getSession();
         if(sinhVienDAO.layThongTinSV(sv.getMssv())!=null)
             return false;
         Transaction tx=session.beginTransaction();

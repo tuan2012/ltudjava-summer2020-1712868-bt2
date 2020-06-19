@@ -18,7 +18,7 @@ public class taiKhoanDAO {
     public static List<Taikhoan> listTK()
     {
         List<Taikhoan> list=null;
-        Session session= HibernateUtils.getSession();
+        Session session= HibernateUtil.getSession();
         String hql="select tk from Taikhoan tk";
         Query query1= session.createQuery(hql);
         list=query1.list();
@@ -27,7 +27,7 @@ public class taiKhoanDAO {
     }
     public static Taikhoan getTK(String tenDangNhap)
     {
-        Session session= HibernateUtils.getSession();
+        Session session= HibernateUtil.getSession();
         Taikhoan tk = (Taikhoan) session.get(Taikhoan.class,tenDangNhap);
 
         session.close();
@@ -36,7 +36,7 @@ public class taiKhoanDAO {
      public static boolean capNhatTK(Taikhoan taiKhoan)
     {
         try{
-            Session session= HibernateUtils.getSession();
+            Session session= HibernateUtil.getSession();
             Transaction tx=session.beginTransaction();
             session.update(taiKhoan);
             tx.commit();

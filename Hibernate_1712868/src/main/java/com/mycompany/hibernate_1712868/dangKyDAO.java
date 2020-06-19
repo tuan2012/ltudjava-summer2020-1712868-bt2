@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package com.mycompany.hibernate_1712868;
-
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -20,7 +19,7 @@ public class dangKyDAO {
     public static boolean xoaSinhVienDk(Dangky dk)
     {
         try{
-            Session session =HibernateUtils.getSession();
+            Session session =HibernateUtil.getSession();
             Transaction tx=session.beginTransaction();
             session.delete(dk);
             tx.commit();
@@ -34,7 +33,7 @@ public class dangKyDAO {
     public static boolean ThemdK(Dangky dk)
     {
         try{
-        Session session=HibernateUtils.getSession();
+        Session session=HibernateUtil.getSession();
         Transaction tx=session.beginTransaction();
         session.save(dk);
         tx.commit();
@@ -47,7 +46,7 @@ public class dangKyDAO {
     }
     public static List<Dangky> getListDK()
     {
-        Session sesion=HibernateUtils.getSession();
+        Session sesion=HibernateUtil.getSession();
         String hql="select dk from Dangky dk";
         Query query =sesion.createQuery(hql);
         return query.list();
@@ -55,7 +54,7 @@ public class dangKyDAO {
    public static boolean capNhatDiem(Dangky dk)
     {
         try{
-        Session session=HibernateUtils.getSession();
+        Session session=HibernateUtil.getSession();
         Transaction tx=session.beginTransaction();
         session.update(dk);
         tx.commit();

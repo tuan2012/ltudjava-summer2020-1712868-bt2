@@ -20,7 +20,7 @@ public class lopDAO {
     public static Lop getThongTinLop(String MaLop)
     {
         
-        Session session=HibernateUtils.getSession();
+        Session session=HibernateUtil.getSession();
         Lop lop;
         lop= (Lop) session.get(Lop.class, MaLop);
         session.close();
@@ -42,7 +42,7 @@ public class lopDAO {
 
     public static boolean luuLop(Lop lop) {
         try{
-            Session session=HibernateUtils.getSession();
+            Session session=HibernateUtil.getSession();
             Transaction tx = session.beginTransaction();
             session.save(lop);
             tx.commit();

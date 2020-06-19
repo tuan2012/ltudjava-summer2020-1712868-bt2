@@ -27,7 +27,7 @@ public class QuanLySVLopMH extends javax.swing.JFrame {
     public QuanLySVLopMH() {
         initComponents();
         showDangKy(dangKyDAO.getListDK());
-        
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**

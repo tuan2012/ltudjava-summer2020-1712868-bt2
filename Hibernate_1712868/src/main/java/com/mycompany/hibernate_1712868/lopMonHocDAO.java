@@ -22,7 +22,7 @@ import pojo.Sinhvien;
 public class lopMonHocDAO {
     public static boolean themLopMonHoc(Lopmonhoc lopMH){
         try{
-        Session session=HibernateUtils.getSession();
+        Session session=HibernateUtil.getSession();
         Transaction tx=session.beginTransaction();
         session.save(lopMH);
         tx.commit();
@@ -47,7 +47,7 @@ public class lopMonHocDAO {
     }
     public static Lopmonhoc getLMH(String MaLop, String MaMon)
     {
-        Session session=HibernateUtils.getSession();
+        Session session=HibernateUtil.getSession();
         //Transaction tx=session.beginTransaction();
         Lopmonhoc lmh=(Lopmonhoc) session.get(Lopmonhoc.class,new LopmonhocId(MaLop,MaMon));
         return lmh;
